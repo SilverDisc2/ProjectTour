@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="20dp"
+    tools:context=".LoginFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:textSize="20sp"
+        android:textStyle="normal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcome to GhuraGhuri"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/mainlogo" />
+
+    <EditText
+        android:id="@+id/emailET"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="Username"
+        android:padding="10dp"
+        android:screenReaderFocusable="true" />
+
+    <EditText
+        android:id="@+id/passwordET"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edit_text_shape"
+        android:hint="Password"
+        android:padding="10dp"
+        android:screenReaderFocusable="true" />
+
+    <Button
+        android:id="@+id/loginBTN"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/button_shape"
+        android:text="Login"
+        android:textColor="@color/purple"
+        android:textStyle="bold" />
+    <TextView
+        android:gravity="center"
+        android:hint="Not Registered! "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/signUpTV"
+        android:textColor="#BADD5025"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:text="Sign Up"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+</FrameLayout>
