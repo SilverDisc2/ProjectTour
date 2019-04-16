@@ -46,6 +46,17 @@
                 android:padding="10dp"
                 android:screenReaderFocusable="true" />
 
+            <EditText
+                android:id="@+id/budgetET"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:hint="Your Etimated Budget"
+
+                android:padding="10dp"
+                android:screenReaderFocusable="true" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="90dp"
@@ -56,8 +67,6 @@
                 android:weightSum="2">
 
                 <TextView
-                    android:paddingTop="22dp"
-                   android:gravity="center_horizontal"
                     android:id="@+id/datePickerFromTV"
                     android:layout_width="200dp"
                     android:layout_height="60dp"
@@ -65,7 +74,9 @@
                     android:layout_marginTop="9dp"
                     android:layout_weight="1"
                     android:background="@drawable/button"
-                    android:hint="Start Date" />
+                    android:gravity="center_horizontal"
+                    android:hint="Start Date"
+                    android:paddingTop="22dp" />
 
                 <View
 
@@ -75,8 +86,6 @@
                     android:background="@color/purple" />
 
                 <TextView
-                    android:paddingTop="22dp"
-                    android:gravity="center_horizontal"
                     android:id="@+id/datePickerToTV"
                     android:layout_width="200dp"
                     android:layout_height="60dp"
@@ -84,19 +93,21 @@
                     android:layout_marginRight="9dp"
                     android:layout_weight="1"
                     android:background="@drawable/button"
-                    android:hint="End Date" />
+                    android:gravity="center_horizontal"
+                    android:hint="End Date"
+                    android:paddingTop="22dp" />
 
 
             </LinearLayout>
 
 
             <Button
-android:layout_marginTop="30dp"
-
                 android:id="@+id/add_tourBTN"
+
                 android:layout_width="95dp"
                 android:layout_height="96dp"
                 android:layout_gravity="center"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/add_button"
                 android:text="ADD"
                 android:textColor="@color/purple"

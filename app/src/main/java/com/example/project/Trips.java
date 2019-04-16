@@ -6,20 +6,28 @@ public class Trips {
     private String endDate;
     private String tripId;
     private String description;
+    private double budget;
 
-    public Trips(String tripName, String startDate, String endDate, String tripId,String description) {
+    public double getBudget() {
+        return budget;
+    }
+
+    public Trips(String tripName, String startDate, String endDate, String tripId, String description, double budget) {
         this.tripName = tripName;
         this.startDate = startDate;
         this.endDate = endDate;
         this.tripId = tripId;
         this.description=description;
+        this.budget=budget;
+
     }
 
-    public Trips(String tripName, String startDate, String endDate, String description) {
+    public Trips(String tripName, String startDate, String endDate, String description,double budget) {
         this.tripName = tripName;
         this.startDate = startDate;
         this.endDate = endDate;
         this.description = description;
+        this.budget=budget;
     }
     public Trips(){
 

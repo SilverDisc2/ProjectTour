@@ -5,6 +5,8 @@ import android.app.DatePickerDialog;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,7 +38,7 @@ import java.util.Map;
  */
 public class AddTourFragment extends Fragment {
 
-    private String tripName, description, startDate, endDate;
+    private String tripId, tripName, description, startDate, endDate, budget;
     FragmentAddTourBinding fragmentAddTourBinding;
     private EditText tripNameET, descriptionET;
     private TextView openDatePickerStar_TV, openDatePickerEnd_TV;
@@ -65,6 +67,7 @@ public class AddTourFragment extends Fragment {
         database = FirebaseDatabase.getInstance();
         fragmentAddTourBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_tour, container, false);
         View view = fragmentAddTourBinding.getRoot();
+        // sendToFragment();
         //  fragmentAddTourBinding= DataBindingUtil.findBinding(view);
 
         //fragmentAddTourBinding.tripNameET.getText();
@@ -82,9 +85,11 @@ public class AddTourFragment extends Fragment {
             public void onClick(View v) {
                 tripName = fragmentAddTourBinding.tripNameET.getText().toString();
                 description = fragmentAddTourBinding.descriptionET.getText().toString();
+                budget = fragmentAddTourBinding.budgetET.getText().toString();
                 startDate = fragmentAddTourBinding.datePickerFromTV.getText().toString();
                 endDate = fragmentAddTourBinding.datePickerToTV.getText().toString();
-                addToDatabase(new Trips(tripName, startDate, endDate,description));
+                addToDatabase(new Trips(tripName, startDate, endDate, description,Double.valueOf(budget)));
+                sendToFragment();
                 Toast.makeText(getActivity(), "" + tripName, Toast.LENGTH_SHORT).show();
             }
         });
@@ -165,7 +170,25 @@ public class AddTourFragment extends Fragment {
         //trips.put("uerID", uerId);
 
         DatabaseReference databaseReference = database.getReference().child("UsersList").child(uerId).child("Trips");
-        databaseReference.push().setValue(trips);
-        Toast.makeText(getActivity(), "Trip Added Successfully", Toast.LENGTH_LONG).show();
+        tripId = databaseReference.push().getKey();
+
+        // Bundle bundle=new
+        databaseReference.child(tripId).setValue(trips);
+        Toast.makeText(getActivity(), "Trip Added Successfully" + tripId, Toast.LENGTH_LONG).show();
+    }
+
+    public void sendToFragment() {
+
+        Bundle bundle = new Bundle();
+        bundle.putString("t", tripId);
+
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        ExpenseFragment expenseFragment = new ExpenseFragment();
+        expenseFragment.setArguments(bundle);
+        //fragmentTransaction.replace(R.id.naviFL,expenseFragment);
+        fragmentTransaction.replace(R.id.naviFL, expenseFragment);
+        fragmentTransaction.commit();
+
     }
 }

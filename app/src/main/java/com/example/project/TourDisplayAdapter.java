@@ -35,7 +35,7 @@ Trips myTrips=tripsList.get(i);
 
 viewHolder.nameTV.setText(myTrips.getTripName());
 viewHolder.startDateTV.setText(myTrips.getStartDate());
-viewHolder.endDateTV.setText(myTrips.getDescription());
+viewHolder.endDateTV.setText(myTrips.getEndDate());
 
     }
 
@@ -45,7 +45,7 @@ viewHolder.endDateTV.setText(myTrips.getDescription());
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView nameTV,startDateTV,endDateTV;
+        private TextView nameTV,startDateTV,endDateTV,budgetTV;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             nameTV=itemView.findViewById(R.id.nameTV);

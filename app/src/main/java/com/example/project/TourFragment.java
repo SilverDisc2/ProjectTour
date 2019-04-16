@@ -66,7 +66,7 @@ private TextView headlineTV;
                 }
                 else if (arrayName[index] == "Wallet")
                 {
-
+initializeFragment(new ExpenseFragment());
                     Toast.makeText(getActivity(), "" + arrayName[index], Toast.LENGTH_LONG).show();
                 }
                 else if (arrayName[index] == "Budget")
