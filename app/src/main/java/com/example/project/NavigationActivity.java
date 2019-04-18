@@ -34,7 +34,7 @@ GradientDrawable gradientDrawable;
                     return true;
                 case R.id.navigation_dashboard:
                     mTextMessage.setText(R.string.title_dashboard);
-                    replaceFragment(new TourDisplayFragment());
+                   // replaceFragment(new TourDisplayFragment());
                     return true;
                 case R.id.navigation_notifications:
                     mTextMessage.setText(R.string.title_notifications);

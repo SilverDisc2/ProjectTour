@@ -46,7 +46,8 @@
         android:background="@drawable/edit_text_shape"
         android:hint="Password"
         android:padding="10dp"
-        android:screenReaderFocusable="true" />
+        android:screenReaderFocusable="true"
+        android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/loginBTN"
