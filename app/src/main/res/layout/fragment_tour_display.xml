@@ -6,15 +6,36 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".TourDisplayFragment">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/searchTourET"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tour Name"/>
+            <Button
+                android:text="Search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_shape"
+                android:id="@+id/searchBTN"
+                />
 
 
+        <!--    <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </android.support.v7.widget.RecyclerView>
+            </android.support.v7.widget.RecyclerView>-->
+            <ListView
+                android:id="@+id/lV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></ListView>
+        </LinearLayout>
 
 
 

@@ -39,6 +39,7 @@ import java.util.Map;
 public class AddTourFragment extends Fragment {
 
     private String tripId, tripName, description, startDate, endDate, budget;
+    private int mDB;
     FragmentAddTourBinding fragmentAddTourBinding;
     private EditText tripNameET, descriptionET;
     private TextView openDatePickerStar_TV, openDatePickerEnd_TV;
@@ -67,7 +68,7 @@ public class AddTourFragment extends Fragment {
         database = FirebaseDatabase.getInstance();
         fragmentAddTourBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_add_tour, container, false);
         View view = fragmentAddTourBinding.getRoot();
-        // sendToFragment();
+        //sendToFragment();
         //  fragmentAddTourBinding= DataBindingUtil.findBinding(view);
 
         //fragmentAddTourBinding.tripNameET.getText();
@@ -88,8 +89,8 @@ public class AddTourFragment extends Fragment {
                 budget = fragmentAddTourBinding.budgetET.getText().toString();
                 startDate = fragmentAddTourBinding.datePickerFromTV.getText().toString();
                 endDate = fragmentAddTourBinding.datePickerToTV.getText().toString();
-                addToDatabase(new Trips(tripName, startDate, endDate, description,Double.valueOf(budget)));
-                sendToFragment();
+                addToDatabase(new Trips(tripName, startDate, endDate, description, Double.valueOf(budget), mDB, mDB));
+                //sendToFragment();
                 Toast.makeText(getActivity(), "" + tripName, Toast.LENGTH_SHORT).show();
             }
         });
@@ -156,6 +157,8 @@ public class AddTourFragment extends Fragment {
 
         DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), dateSetListener, year, month, day);
         datePickerDialog.show();
+        mDB = month;
+
     }
 
     private void addToDatabase(Trips trips) {
@@ -171,7 +174,7 @@ public class AddTourFragment extends Fragment {
 
         DatabaseReference databaseReference = database.getReference().child("UsersList").child(uerId).child("Trips");
         tripId = databaseReference.push().getKey();
-
+        trips.setTripId(tripId);
         // Bundle bundle=new
         databaseReference.child(tripId).setValue(trips);
         Toast.makeText(getActivity(), "Trip Added Successfully" + tripId, Toast.LENGTH_LONG).show();
@@ -191,4 +194,7 @@ public class AddTourFragment extends Fragment {
         fragmentTransaction.commit();
 
     }
+
+
+
 }

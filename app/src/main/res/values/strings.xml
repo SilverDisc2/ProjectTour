@@ -8,7 +8,7 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_navigation">NavigationActivity</string>
-
+    <string name="place_key">AIzaSyCzQwrw2TvQ2bIsSQMJJ5S1nyPgWg4de70</string>
     <string name="gender_prompt">Select your Gender</string>
 
     <string-array name="gender_arrays">

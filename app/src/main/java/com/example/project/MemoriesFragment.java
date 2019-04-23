@@ -130,7 +130,7 @@ public class MemoriesFragment extends Fragment implements View.OnClickListener {
             progressDialog.show();
 
             //getting the storage reference
-            StorageReference sRef = storageReference.child(Constants.STORAGE_PATH_UPLOADS + System.currentTimeMillis() + "." + getFileExtension(filePath));
+            final StorageReference sRef = storageReference.child(Constants.STORAGE_PATH_UPLOADS + System.currentTimeMillis() + "." + getFileExtension(filePath));
 
             //adding the file to reference
             sRef.putFile(filePath)
@@ -141,10 +141,16 @@ public class MemoriesFragment extends Fragment implements View.OnClickListener {
                             progressDialog.dismiss();
                             Toast.makeText(getActivity(), "File Upload", Toast.LENGTH_SHORT).show();
 
-                            Upload upload = new Upload(editTextName.getText().toString().trim(), taskSnapshot.getStorage().getDownloadUrl().toString());
+                            sRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                @Override
+                                public void onSuccess(Uri uri) {
+                                    Upload upload = new Upload(editTextName.getText().toString().trim(), uri.toString());
 
-                            String uploadId = mDatabase.push().getKey();
-                            mDatabase.child(uploadId).setValue(upload);
+                                    String uploadId = mDatabase.push().getKey();
+                                    mDatabase.child(uploadId).setValue(upload);
+                                }
+                            });
+
 
 
                         }
