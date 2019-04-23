@@ -45,7 +45,12 @@ public class LoginFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-        signUpTV = view.findViewById(R.id.signUpTV);
+        if(firebaseAuth.getCurrentUser() != null){
+            //close this activity
+getActivity().finish();
+
+            startActivity(new Intent(getActivity(), NavigationActivity.class));
+        }        signUpTV = view.findViewById(R.id.signUpTV);
         signUpTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +77,7 @@ public class LoginFragment extends Fragment {
             }
         });
 
+
         return view;
     }
 
@@ -84,8 +90,11 @@ public class LoginFragment extends Fragment {
 
                 if (task.isSuccessful()) {
                     Toast.makeText(getActivity(), "Signed In!", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getActivity(),NavigationActivity.class));
+                   // startActivity(new Intent(getActivity(),NavigationActivity.class));
 
+                    Intent intent = new Intent(getActivity(),NavigationActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                 }
                 else {
                     Toast.makeText(getActivity(), "Email or password doesn't match!", Toast.LENGTH_SHORT).show();

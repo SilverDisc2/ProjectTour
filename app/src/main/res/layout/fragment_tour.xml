@@ -3,11 +3,17 @@
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".TourFragment">
+    android:layout_height="wrap_content"
+    tools:context=".TourFragment"
 
+    >
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <TextView
+
         android:textSize="30dp"
         android:layout_marginTop="30dp"
         android:layout_width="match_parent"
@@ -17,10 +23,15 @@
         android:textColor="@color/purple"
         android:text="Lets Make a Tour!"/>
     <com.hitomi.cmlibrary.CircleMenu
-
+        android:background="@drawable/t"
         android:layout_gravity="center"
         android:id="@+id/circle_menu"
         android:layout_width="match_parent"
-        android:layout_height="500dp" />
+        android:layout_height="450dp" />
+
+
+
+</RelativeLayout>
+
 </FrameLayout>
 

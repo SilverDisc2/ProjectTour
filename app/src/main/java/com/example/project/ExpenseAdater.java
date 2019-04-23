@@ -50,8 +50,8 @@ public class ExpenseAdater extends RecyclerView.Adapter<ExpenseAdater.Viewholder
         TextView expenseNameTV,expenseAmountTV;
         public Viewholder(@NonNull View itemView) {
             super(itemView);
-            expenseNameTV=itemView.findViewById(R.id.expense_nameET);
-            expenseAmountTV=itemView.findViewById(R.id.expense_amountET);
+            expenseNameTV=itemView.findViewById(R.id.expenseNameET);
+            expenseAmountTV=itemView.findViewById(R.id.expenseAmountET);
 
         }
     }

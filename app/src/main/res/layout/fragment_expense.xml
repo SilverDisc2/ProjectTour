@@ -24,7 +24,7 @@
 
 
     <EditText
-        android:id="@+id/expense_nameET"
+        android:id="@+id/expenseNameET"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center"
@@ -36,7 +36,7 @@
 
 
     <EditText
-        android:id="@+id/expense_amountET"
+        android:id="@+id/expenseAmountET"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_gravity="center"
@@ -47,7 +47,7 @@
         android:screenReaderFocusable="true" />
 
         <Button
-            android:id="@+id/add_expenseBTN"
+            android:id="@+id/addExpenseBTN"
 
             android:layout_width="95dp"
             android:layout_height="96dp"
@@ -57,13 +57,13 @@
             android:text="ADD"
             android:textColor="@color/purple"
             android:textStyle="bold" />
-        <android.support.v7.widget.RecyclerView
-android:layout_marginTop="5dp"
-            android:id="@+id/expenseRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+      <ListView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/expenseLV">
 
-    </android.support.v7.widget.RecyclerView>
+
+      </ListView>
     </LinearLayout>
 
 

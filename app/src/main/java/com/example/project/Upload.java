@@ -17,4 +17,8 @@ public class Upload {
         this.name = name;
         this.url = url;
     }
+
+    public Upload() {
+
+    }
 }

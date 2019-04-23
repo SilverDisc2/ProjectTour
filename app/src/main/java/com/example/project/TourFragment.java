@@ -44,7 +44,7 @@ private TextView headlineTV;
         headlineTV=view.findViewById(R.id.headlineTV);
        circleMenu=(CircleMenu) view.findViewById(R.id.circle_menu);
 
-        circleMenu.setMainMenu(Color.parseColor("#FFFFFF"), R.drawable.click, R.drawable.ic_radio_button_checked_black_24dp)
+        circleMenu.setMainMenu(Color.parseColor("#FFFFFF"), R.drawable.click, R.drawable.tour)
                 .addSubMenu(Color.parseColor("#1E90FF"), R.drawable.tour).addSubMenu(Color.parseColor("#F4A460"), R.drawable.wallet)
                 .addSubMenu(Color.parseColor("#3CB371"), R.drawable.budget).setOnMenuSelectedListener(new OnMenuSelectedListener() {
 

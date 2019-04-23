@@ -16,6 +16,10 @@ public class Expenses {
         this.amount = amount;
     }
 
+    public Expenses( ) {
+
+    }
+
     public String getExpenseName() {
         return expenseName;
     }
