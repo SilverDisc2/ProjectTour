@@ -107,26 +107,7 @@ public class TourDisplayFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-      /*  fragmentTourDisplayBinding.btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-initRecyclerView();
-
-               // initRecyclerView();
-
-            }
-        });*/
-/*
-    searchTour=  fragmentTourDisplayBinding..getText().toString();
-
-    fragmentTourDisplayBinding.searchBTN.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            searchDB(searchTour);
-        }
-    });*/
-
-
+    
         return view;
     }
 
